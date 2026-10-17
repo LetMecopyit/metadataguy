@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Title & Meta -->
+  <title>Remove GPS Metadata from Wildlife Photos | Wildlife Privacy Project</title>
+  <meta name="title" content="Remove GPS Metadata from Wildlife Photos | Wildlife Privacy Project">
+  <meta name="description" content="Learn how to remove GPS metadata from wildlife photos, protect bird nest location from geotagging, and preserve nature photo location privacy before sharing.">
+  <meta name="keywords" content="remove GPS metadata from wildlife photos, remove GPS data from bird photos, wildlife photo location privacy, protect bird nest location from geotagging, remove geotags before sharing wildlife photos, how to hide GPS location in nature photos">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.wildlifeprivacyproject.org/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Wildlife Privacy Project">
+  <meta property="og:url" content="https://www.wildlifeprivacyproject.org/">
+  <meta property="og:title" content="Does Your Wildlife Photo Reveal Its Exact Location?">
+  <meta property="og:description" content="Learn how to remove GPS metadata from wildlife photos and protect bird nest location from geotagging. An interactive field guide for nature photographers.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:image:alt" content="Barn owl flying silently over wetland grasses">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Does Your Wildlife Photo Reveal Its Exact Location?">
+  <meta name="twitter:description" content="A practical field guide on how to hide GPS location in nature photos, remove geotags before sharing wildlife photos, and protect rare nests.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Structured JSON-LD Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Does Your Wildlife Photo Reveal Its Exact Location? How to Remove GPS Metadata from Wildlife Photos",
+        "description": "Comprehensive guide for outdoor photographers explaining how to remove GPS metadata from wildlife photos, protect bird nest location from geotagging, and maintain wildlife photo location privacy.",
+        "author": {
+          "@type": "Organization",
+          "name": "Wildlife Privacy Project"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Wildlife Privacy Project",
+          "url": "https://www.wildlifeprivacyproject.org/"
+        },
+        "mainEntityOfPage": "https://www.wildlifeprivacyproject.org/",
+        "keywords": [
+          "remove GPS metadata from wildlife photos",
+          "remove GPS data from bird photos",
+          "wildlife photo location privacy",
+          "protect bird nest location from geotagging",
+          "remove geotags before sharing wildlife photos",
+          "how to hide GPS location in nature photos"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why is it important to remove GPS metadata from wildlife photos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Removing GPS metadata protects active bird nests, endangered succulents, and rare animals from poachers, illegal collectors, and excessive crowd disturbance. Raw camera files record latitude, longitude, and elevation tags accurate to within 3 meters."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I remove GPS data from bird photos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can remove GPS data using lossless binary segment stripping tools. This process trims the EXIF APP1 header without re-encoding the JPEG image matrix, preserving full plumage resolution while removing location coordinates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do conservation platforms protect bird nest locations from geotagging?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Platforms like iNaturalist automatically obscure coordinates for vulnerable taxa inside a randomized 500 km² zone. Similarly, eBird restricts public checklists and alerts for sensitive breeding raptors and owls."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#" class="brand">
+        <span class="brand-title">Wildlife Privacy Project</span>
+        <span class="brand-tag">Field Guide</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#specimen-study">Specimen Study</a>
+        <a href="#what-is-metadata">What Is Metadata?</a>
+        <a href="#conservation-risks">Field Risks</a>
+        <a href="#safe-practices">Safe Practices</a>
+        <a href="#faq">FAQ</a>
+        <a href="#clean-tool-resource" class="nav-btn">Recommended Cleaner</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-badge">Wildlife Photo Location Privacy Guide</div>
+        <h1 class="hero-title">Does Your Wildlife Photo Reveal Its Exact Location?</h1>
+        <p class="hero-summary">
+          When you capture a hunting raptor, a kit fox, or a rare desert flower, your camera or phone often 
+          records silent coordinates accurate to within 3 meters. Learning how to <strong>remove GPS metadata from wildlife photos</strong> 
+          and <strong>protect bird nest location from geotagging</strong> is now an essential field practice for ethical outdoor photographers.
+        </p>
+        
+        <div class="hero-stats-row">
+          <div class="stat-box">
+            <span class="stat-figure">3 meters</span>
+            <span class="stat-caption">Average accuracy of embedded GPS coordinates in camera headers</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-figure">500 km²</span>
+            <span class="stat-caption">Standard area used by conservation platforms to obscure sensitive sightings</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-figure">0 pixels changed</span>
+            <span class="stat-caption">Lossless metadata removal preserves 100% of your original optical sharpness</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Specimen Study Section -->
+    <section id="specimen-study" class="section-study">
+      <div class="container">
+        <div class="section-heading text-center">
+          <span class="section-label">Interactive Field Analysis</span>
+          <h2>Field Specimen Location Inspector</h2>
+          <p class="section-intro">
+            Select any authentic wildlife photograph below to inspect how camera hardware embeds coordinates. 
+            Toggle between the original capture and the protected view to see how to hide GPS location in nature photos.
+          </p>
+        </div>
+
+        <!-- Specimen Selection Cards -->
+        <div class="specimen-grid" id="specimen-grid">
+          <!-- Populated by JavaScript -->
+        </div>
+
+        <!-- Inspector Display Area -->
+        <div class="inspector-card">
+          <div class="inspector-layout">
+            
+            <!-- Left: Photo Viewport -->
+            <div class="photo-column">
+              <div class="photo-display-frame">
+                <img id="inspector-image" src="" alt="Active wildlife specimen" class="inspector-img">
+                
+                <!-- Coordinate Pin Marker -->
+                <div id="inspector-pin" class="inspector-pin">
+                  <div class="pin-dot"></div>
+                  <div class="pin-card">
+                    <strong id="pin-coordinates">52.3791° N, 4.9003° E</strong>
+                    <span id="pin-note">GPS Fix: Precision to 2.6m</span>
+                  </div>
+                </div>
+
+                <!-- Obscuration Shield (when cleaned) -->
+                <div id="inspector-shield" class="inspector-shield hidden">
+                  <div class="shield-message">
+                    <strong>Coordinates Removed Losslessly</strong>
+                    <span>Habitat location protected. Image pixels remain completely untouched.</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Author Attribution Bar -->
+              <div class="attribution-strip">
+                <span class="attr-text">Photograph by <a id="author-credit-link" href="#" target="_blank" rel="noopener">Photographer</a></span>
+                <a id="photo-source-link" href="#" target="_blank" rel="noopener" class="attr-license">View Original Photo Reference</a>
+              </div>
+            </div>
+
+            <!-- Right: Data Readout Panel -->
+            <div class="data-column">
+              
+              <!-- State Switcher -->
+              <div class="switch-row">
+                <span class="switch-title">Image State:</span>
+                <div class="toggle-group">
+                  <button type="button" class="toggle-btn active" id="btn-show-raw">Original (Coordinates Attached)</button>
+                  <button type="button" class="toggle-btn" id="btn-show-clean">Location Protected</button>
+                </div>
+              </div>
+
+              <!-- Assessment Box -->
+              <div class="assessment-box">
+                <div class="assessment-header">
+                  <span class="assessment-grade" id="assessment-grade">High Risk</span>
+                  <span class="assessment-category" id="assessment-category">Active Roost Site</span>
+                </div>
+                <h4 id="assessment-headline" class="assessment-headline">Exact Roost Coordinates Recorded</h4>
+                <p id="assessment-body" class="assessment-body">
+                  This file records exact latitude, longitude, and elevation. Because owls return consistently to 
+                  the same hollow tree, sharing these uncleaned coordinates exposes the daytime resting site.
+                </p>
+                <div class="protocol-micro-note">
+                  <h5>Data Verification Protocol</h5>
+                  <h6>Standard Field Coordinate Check Method</h6>
+                </div>
+              </div>
+
+              <!-- Metadata Table -->
+              <div class="data-table-wrap">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>File Header</th>
+                      <th>Detected Value</th>
+                      <th>Field Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="data-table-body">
+                    <!-- Populated dynamically -->
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editorial Section 1: What is Metadata? -->
+    <section id="what-is-metadata" class="content-section">
+      <div class="container article-container">
+        
+        <span class="section-label">Technical Background</span>
+        <h2>What Exactly Is Image Metadata and EXIF Data?</h2>
+        
+        <p class="article-lead">
+          Every digital photograph consists of two distinct components: the visible picture data that decoders render on screen, 
+          and a hidden container of text and binary records known as metadata. Understanding this distinction is the key to 
+          managing wildlife photo location privacy.
+        </p>
+
+        <p>
+          In the 1990s, camera manufacturers established the Exchangeable Image File Format (EXIF) standard. The original intent was 
+          simple: it allowed photographers to log exposure time, aperture, focal length, and ISO speed automatically, replacing the 
+          manual paper notebooks that film photographers carried in the field.
+        </p>
+
+        <!-- Technical Comparison: Pixels vs Headers -->
+        <div class="comparison-dual-cards">
+          <div class="info-card">
+            <h4>1. The Pixel Matrix (Visible Picture)</h4>
+            <p>
+              The compressed color channels that make up the image. When you view, print, or edit a photo, you are interacting with 
+              these pixels.
+            </p>
+            <span class="card-status-tag">Visible to Viewers</span>
+          </div>
+
+          <div class="info-card">
+            <h4>2. File Headers (Invisible Data)</h4>
+            <p>
+              Blocks of structured text stored outside the pixel stream. They record camera models, lens details, timestamps, 
+              and geographic coordinates.
+            </p>
+            <span class="card-status-tag highlight">Stored in Headers</span>
+          </div>
+        </div>
+
+        <h3>How GPS Coordinates Enter a Nature Photo</h3>
+        <p>
+          Coordinates are typically injected into image files through three standard channels:
+        </p>
+
+        <div class="channel-list">
+          <div class="channel-item">
+            <h4>Smartphones and Connected Devices</h4>
+            <p>
+              When location permissions are enabled on your phone camera, the device queries GPS satellites and cellular signals at 
+              the moment of capture, recording your exact position into the image header.
+            </p>
+            <div class="channel-meta">
+              <h5>Automated Satellite Fix</h5>
+              <h6>Active on default camera applications</h6>
+            </div>
+          </div>
+          <div class="channel-item">
+            <h4>Camera GPS Modules and Hot-Shoe Units</h4>
+            <p>
+              Specialized wildlife camera bodies and hot-shoe accessories write continuous satellite telemetry directly to memory cards 
+              during field shoots.
+            </p>
+            <div class="channel-meta">
+              <h5>Hardware Telemetry</h5>
+              <h6>Direct binary write to RAW and JPEG files</h6>
+            </div>
+          </div>
+          <div class="channel-item">
+            <h4>Mobile Companion Applications</h4>
+            <p>
+              Many photographers link their mirrorless cameras to phone apps using Bluetooth or Wi-Fi. In the background, the phone 
+              transmits current coordinates to the camera for each frame shot.
+            </p>
+            <div class="channel-meta">
+              <h5>Background Synchronization</h5>
+              <h6>Low energy wireless coordinate injection</h6>
+            </div>
+          </div>
+        </div>
+
+        <h3>EXIF vs IPTC vs XMP Standards</h3>
+        <p>
+          Photos often contain more than one metadata format:
+        </p>
+
+        <div class="table-wrap">
+          <table class="reference-table">
+            <thead>
+              <tr>
+                <th>Standard</th>
+                <th>Primary Purpose</th>
+                <th>Typical Content</th>
+                <th>Wildlife Relevance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>EXIF</strong></td>
+                <td>Camera settings and hardware capture data</td>
+                <td>Latitude, Longitude, Altitude, Shutter speed, Lens</td>
+                <td>Pins exact coordinates of the subject</td>
+              </tr>
+              <tr>
+                <td><strong>IPTC</strong></td>
+                <td>Editorial and authorship information</td>
+                <td>Photographer name, copyright notice, location text</td>
+                <td>May state the park, city, or county by name</td>
+              </tr>
+              <tr>
+                <td><strong>XMP</strong></td>
+                <td>Editing software workflows</td>
+                <td>Lightroom adjustments, color ratings, edit history</td>
+                <td>Can retain duplicate coordinates across exports</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Editorial Section 2: Conservation Risks -->
+    <section id="conservation-risks" class="content-section bg-light">
+      <div class="container article-container">
+        
+        <span class="section-label">Field Protection</span>
+        <h2>Why Wildlife Photo Location Privacy Matters</h2>
+        
+        <p class="article-lead">
+          In nature photography, field locations are hard-earned through patience and fieldcraft. However, when photos are shared 
+          with intact coordinates, that location data can create real risks for wild species. This is why learning how to 
+          remove geotags before sharing wildlife photos is vital.
+        </p>
+
+        <div class="risk-cards-grid">
+          <div class="risk-card">
+            <h4>Raptor Nest Disturbance and Poaching</h4>
+            <p>
+              Falcons, eagles, and owls return to the same cliffs and tree cavities year after year. Accurate altitude and coordinate 
+              tags guide unauthorized visitors directly to nests during incubation, which can cause birds to abandon active broods.
+            </p>
+            <div class="risk-sub-detail">
+              <h5>Vulnerable Species Scope</h5>
+              <h6>Falcons, owls, and cliff-nesting birds of prey</h6>
+            </div>
+          </div>
+
+          <div class="risk-card">
+            <h4>Rare Plant and Succulent Theft</h4>
+            <p>
+              In desert regions and coastal habitats, plant collectors search online galleries for wild succulents and native orchids. 
+              Unscrubbed geotags have led to localized colonies being dug up and sold on illegal collector markets.
+            </p>
+            <div class="risk-sub-detail">
+              <h5>Botanical Poaching Risk</h5>
+              <h6>Dwarf succulents, native orchids, and alpine flora</h6>
+            </div>
+          </div>
+
+          <div class="risk-card">
+            <h4>Small Reptile and Amphibian Microhabitats</h4>
+            <p>
+              Many salamanders, vipers, and rare frogs exist in microhabitats as small as a single creek bed or rock pile. 
+              A precise coordinate fix allows commercial collectors to target the entire local population.
+            </p>
+            <div class="risk-sub-detail">
+              <h5>Microhabitat Sensitivity</h5>
+              <h6>Isolated springs, vernal pools, and talus slopes</h6>
+            </div>
+          </div>
+
+          <div class="risk-card">
+            <h4>Crowds at Maternal Den Sites</h4>
+            <p>
+              When photos of animals with young are published with active location tags, word can travel quickly through local 
+              groups. Crowds of photographers often arrive the next morning, causing severe stress to nursing mothers.
+            </p>
+            <div class="risk-sub-detail">
+              <h5>Disturbance Timeline</h5>
+              <h6>Unregulated gatherings within 24 hours of posting</h6>
+            </div>
+          </div>
+        </div>
+
+        <h3>How Conservation Platforms Manage Location Data</h3>
+        <p>
+          Major citizen science platforms have recognized this problem and built automated safeguards to protect bird nest location 
+          from geotagging:
+        </p>
+
+        <div class="protocol-grid">
+          <div class="protocol-card">
+            <h4>iNaturalist Geoprivacy System</h4>
+            <p>
+              For species listed as threatened or vulnerable by conservation authorities, iNaturalist automatically obscures coordinates. 
+              The public pin is replaced with a randomized point inside an area of roughly 500 km², keeping true locations private.
+            </p>
+            <div class="protocol-meta">
+              <h5>Randomized Coordinate Obscuration</h5>
+              <h6>Preserves regional biodiversity data while hiding exact sites</h6>
+            </div>
+          </div>
+
+          <div class="protocol-card">
+            <h4>eBird Sensitive Species List</h4>
+            <p>
+              Managed by the Cornell Lab of Ornithology, eBird restricts public checklists, map pins, and data exports for 
+              sensitive species during breeding seasons to prevent targeted disturbance.
+            </p>
+            <div class="protocol-meta">
+              <h5>Breeding Season Suppression</h5>
+              <h6>Shields nesting raptors, owls, and rare parrots from public mapping</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="note-box">
+          <strong>Keep in mind:</strong> While these platforms obscure coordinates within their own systems, sending the original 
+          image file directly through email, cloud drives, or private photography galleries preserves the raw EXIF payload completely intact.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Editorial Section 3: Safe Practices -->
+    <section id="safe-practices" class="content-section">
+      <div class="container article-container">
+        
+        <span class="section-label">Field Guidelines</span>
+        <h2>How to Remove GPS Metadata from Wildlife Photos Safely</h2>
+        
+        <p class="article-lead">
+          When stripping metadata from your photographs, the method you choose affects your final image quality. Knowing 
+          how to remove GPS data from bird photos without compromising plumage sharpness is essential for fine-art nature photography.
+        </p>
+
+        <div class="method-comparison">
+          <div class="method-column">
+            <h4>Lossy Re-Encoding (Canvas Method)</h4>
+            <p>
+              Many basic online tools load your photo onto an HTML5 canvas and re-export it as a new JPEG. 
+              This forces the image through a second round of compression, which softens fine details like feathers and fur.
+            </p>
+            <span class="method-tag warning">Causes generation loss</span>
+            <div class="method-meta">
+              <h5>Recompression Artifacts</h5>
+              <h6>Unpredictable file compression variance</h6>
+            </div>
+          </div>
+
+          <div class="method-column recommended">
+            <h4>Lossless Segment Stripping (Recommended)</h4>
+            <p>
+              Lossless cleaners read the file's raw byte markers and cut out the metadata blocks directly without decompressing 
+              the pixel matrix. Every pixel remains bit-for-bit identical to your original capture.
+            </p>
+            <span class="method-tag success">100% Original Pixel Quality</span>
+            <div class="method-meta">
+              <h5>Byte-Level Marker Slicing</h5>
+              <h6>Original Discrete Cosine Transform blocks untouched</h6>
+            </div>
+          </div>
+        </div>
+
+        <h3>What Metadata Removal Can and Cannot Do</h3>
+        <p>
+          Cleaning metadata is an essential step, but understanding its boundaries helps you protect bird nest location from geotagging 
+          comprehensively:
+        </p>
+
+        <div class="scope-grid">
+          <div class="scope-box">
+            <h4>What Metadata Cleaning Removes</h4>
+            <ul>
+              <li>Exact GPS latitude, longitude, and elevation numbers.</li>
+              <li>Camera serial numbers that could link multiple uploads.</li>
+              <li>Precise capture timestamps that reveal daily routines.</li>
+              <li>Automated coordinate scraping by online bots.</li>
+            </ul>
+            <div class="scope-meta">
+              <h5>Digital Header Scrubbing</h5>
+              <h6>Erases invisible binary tracking tags</h6>
+            </div>
+          </div>
+
+          <div class="scope-box">
+            <h4>What Metadata Cleaning Cannot Hide</h4>
+            <ul>
+              <li>Distinctive ridgelines, rock formations, or peaks in the frame.</li>
+              <li>Trail signs, mile markers, or recognizable park structures.</li>
+              <li>Visible scientific leg bands or wing tags on the animal.</li>
+              <li>Text in captions or comments mentioning the location.</li>
+            </ul>
+            <div class="scope-meta">
+              <h5>Visual Feature Awareness</h5>
+              <h6>Requires conscious framing and cropping in post-processing</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="guideline-summary">
+          <strong>Best Practice for Wildlife Photographers:</strong> Remove metadata losslessly before publishing, 
+          crop out recognizable background landmarks when photographing sensitive subjects, and delay sharing photos until nesting 
+          or breeding seasons have ended.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="content-section bg-light">
+      <div class="container article-container">
+        
+        <span class="section-label">Questions and Answers</span>
+        <h2>Frequently Asked Questions on Wildlife Geotags</h2>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <h4>How do I know if my photo has GPS coordinates attached?</h4>
+            <p>
+              On Windows, right-click the file, choose Properties, and open the Details tab. On macOS, open the photo in Preview, 
+              press Command + I, and check the GPS tab. If coordinates are listed, anyone who downloads the file can view them.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Does social media automatically remove GPS data from bird photos?</h4>
+            <p>
+              Public social media feeds (like Instagram and Facebook) usually strip EXIF headers during web compression. However, 
+              sharing original files through email attachments, AirDrop, Google Drive, Dropbox, Discord uncompressed files, or photography 
+              portals regularly preserves full GPS coordinates.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h4>How do I hide GPS location in nature photos without losing image sharpness?</h4>
+            <p>
+              Use a lossless binary metadata stripper rather than a canvas re-encoder. Lossless tools remove the EXIF APP1 header block 
+              directly from the file without decompressing or recompressing the picture data, leaving pixel quality 100% untouched.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h4>Why should I protect bird nest location from geotagging?</h4>
+            <p>
+              Active nests are highly vulnerable to disturbance, predation, and nest abandonment. Human presence near nests can lead to 
+              parents deserting eggs or chicks, while raptor nests face the threat of illegal falconry harvesting.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Final Recommendation Section (Linking to MacroToolkit) -->
+    <section id="clean-tool-resource" class="section-clean-tool">
+      <div class="container">
+        <div class="tool-recommendation-card">
+          <span class="section-label">Recommended Privacy Resource</span>
+          <h2>How to Clean Metadata From Your Wildlife Photos</h2>
+          <p>
+            We currently do not host an image processing tool on this site, as the Wildlife Privacy Project is strictly 
+            an educational field initiative. However, we regularly recommend a privacy-oriented, no-signup utility that does 
+            it instantly in your browser:
+          </p>
+
+          <div class="recommendation-feature-box">
+            <h4>MacroToolkit Image Metadata Remover</h4>
+            <p>
+              A free, privacy-first web utility that strips GPS coordinates, camera serial numbers, and private EXIF headers 
+              losslessly. It executes entirely on your device with zero server uploads, keeping your original pixels completely unchanged.
+            </p>
+            <div class="feature-bullets-strip">
+              <span>Zero server uploads</span>
+              <span>No registration or account needed</span>
+              <span>100% lossless output</span>
+              <span>JPG, PNG and WebP support</span>
+            </div>
+            
+            <div class="tool-link-wrap">
+              <a href="https://www.macrotoolkit.com/utilities/image-metadata-remover" class="btn btn-primary" target="_blank" rel="noopener">
+                Visit MacroToolkit Image Metadata Remover
+              </a>
+            </div>
+          </div>
+
+          <span class="tool-note">Recommended for ethical birders, wildlife photographers, and field researchers.</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <strong>Wildlife Privacy Project</strong>
+        <p>An educational field resource dedicated to ethical nature photography and habitat protection.</p>
+      </div>
+      <div class="footer-right">
+        <a href="#specimen-study">Specimen Study</a>
+        <a href="#what-is-metadata">What Is Metadata?</a>
+        <a href="#conservation-risks">Field Risks</a>
+        <a href="#safe-practices">Safe Practices</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
