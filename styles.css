@@ -100,10 +100,14 @@ img {
   height: 68px;
 }
 
-.brand {
+.brand-group {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 1.15rem;
+}
+
+.brand {
+  text-decoration: none;
 }
 
 .brand-title {
@@ -112,47 +116,50 @@ img {
   font-weight: 700;
   color: var(--text-main);
   letter-spacing: -0.01em;
+  transition: color 0.18s ease;
+}
+
+.brand:hover .brand-title {
+  color: var(--forest);
 }
 
 .brand-tag {
-  font-size: 0.72rem;
-  font-weight: 600;
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   background: var(--forest-light);
   color: var(--forest);
-  padding: 2px 7px;
+  padding: 4px 10px;
   border-radius: var(--radius-sm);
+  border: 1px solid rgba(27, 94, 58, 0.16);
+  text-decoration: none;
+  transition: all 0.18s ease;
+}
+
+.brand-tag:hover {
+  background: var(--forest);
+  color: #ffffff;
+  border-color: var(--forest);
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: 1.85rem;
 }
 
-.nav-links a:not(.nav-btn) {
+.nav-links a {
   color: var(--text-muted);
   font-size: 0.92rem;
   font-weight: 600;
+  text-decoration: none;
+  transition: color 0.18s ease;
 }
 
-.nav-links a:not(.nav-btn):hover {
-  color: var(--text-main);
-}
-
-.nav-btn {
-  background: var(--forest);
-  color: #ffffff !important;
-  font-size: 0.88rem;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius-md);
-  transition: background 0.15s ease;
-}
-
-.nav-btn:hover {
-  background: var(--forest-hover);
+.nav-links a:hover {
+  color: var(--forest);
 }
 
 /* Hero Section */
@@ -1211,5 +1218,5 @@ h6 {
   .specimen-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-content { flex-direction: column; text-align: center; }
   .footer-right { justify-content: center; }
-  .nav-links a:not(.nav-btn) { display: none; }
+  .nav-links { display: none; }
 }
